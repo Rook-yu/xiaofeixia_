@@ -70,7 +70,7 @@ a|b|c|d|e|
 1.有序列表1
 2.有序列表2
 
-   - [  ]未完成项
+ -[  ]未完成项
 
 
 | headheadhead1 | headheadhead2  | headheadhead3 |

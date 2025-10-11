@@ -36,7 +36,6 @@ int main() {
             printf("%d\n", m);
             break;
         }
-        
         m++;
     }
     

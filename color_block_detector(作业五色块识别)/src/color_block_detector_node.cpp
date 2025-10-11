@@ -39,14 +39,14 @@ public:
       std::bind(&ColorBlockDetectorNode::image_callback, this, std::placeholders::_1),
       "raw");
     
-    // 创建图像发布者（原始结果图）
+    // 创建原始结果图
     image_pub_ = image_transport::create_publisher(this, "color_detection_result");
     
     // 创建色块位置发布者
     blue_block_pub_ = this->create_publisher<geometry_msgs::msg::Point>("blue_block_position", 10);
     red_block_pub_ = this->create_publisher<geometry_msgs::msg::Point>("red_block_position", 10);
     
-    // 初始化OpenCV窗口（创建新窗口）
+    // 创建新窗口
     cv::namedWindow("Red Mask", cv::WINDOW_NORMAL);  // 红色区域窗口
     cv::namedWindow("Blue Mask", cv::WINDOW_NORMAL); // 蓝色区域窗口
     cv::resizeWindow("Red Mask", 640, 480);          // 设置窗口大小
@@ -149,7 +149,7 @@ private:
       cv::inRange(hsv_frame, cv::Scalar(h_low2, s_low, v_low), cv::Scalar(h_high2, s_high, v_high), mask2);
       mask = mask1 | mask2;
       
-      draw_color = cv::Scalar(0, 0, 255); // BGR
+      draw_color = cv::Scalar(0, 0, 255); 
       publisher = &red_block_pub_;
     }
     else

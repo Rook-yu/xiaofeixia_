@@ -19,7 +19,7 @@ int main() {
             // 计算第i次处决的位置
             current = (current + m - 1) % (2 * k - i);
             
-            // 检查是否在坏人区域（位置k到2k-1，因为数组下标从0开始）
+            // 检查是否在坏人区域（位置k到2k-1，数组下标从0开始）
             if (current < k) {
                 valid = 0;
                 break;

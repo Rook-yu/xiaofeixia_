@@ -16,7 +16,6 @@ void convert(int x, int m) {
 int main() {
     int x, m;
     scanf("%d %d", &x, &m);
-    // 调用递归函数进行转换
     convert(x, m);
     printf("\n");
     return 0;
